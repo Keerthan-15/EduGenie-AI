@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Google AI Studio App</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <!-- 1. Add the n8n Chat Style -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+  <!-- 2. Add the n8n Chat Script -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://keerthan123.app.n8n.cloud/webhook/f1afa7b9-c947-4db6-9eb6-891b9fe0876e/chat',
+      title: 'EduGenie AI',
+      placeholder: 'Type your message...',
+      initialMessages: ['Hello! I am your EduGenie assistant. How can I help you today?'],
+      backgroundColor: '#4e73df',
+      mainColor: '#ffffff'
+    });
+  </script>
+</body>
+
+</html>
